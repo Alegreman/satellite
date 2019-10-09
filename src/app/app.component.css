@@ -16,7 +16,9 @@ h1 {
 
   background-color: #464646;
 
-  height: 25em;
-  width: 35em;
+  height: 15em;
+  width: 70%;
   border-radius: 25%;
+
+  margin: 5rem auto;
 }
