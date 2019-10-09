@@ -32,7 +32,7 @@ export class SatDataDataSource extends DataSource<SatDataItem> {
   ) {
     super();
     this.dataService.getPosition().subscribe(res => {
-      this.data = res;
+      this.data = res.above;
       // console.log(res.above);
     });
   }
