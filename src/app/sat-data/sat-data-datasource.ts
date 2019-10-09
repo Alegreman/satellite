@@ -5,17 +5,19 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 import { DataService } from '../data.service';
 
 // TODO: Replace this with your own data model type
-export interface SatDataItem extends above {
+export interface SatDataItem {
   satname: string;
   satid: number;
   launchDate: string;
   satlat: number;
   satlng: number;
   satalt: number;
+  above: any;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: SatDataItem[] = [];
+
 /**
  * Data source for the SatData view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
@@ -30,6 +32,7 @@ export class SatDataDataSource extends DataSource<SatDataItem> {
     private dataService: DataService
   ) {
     super();
+
     this.dataService.getPosition().subscribe(res => {
       this.data = res.above;
     });

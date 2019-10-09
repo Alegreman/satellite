@@ -1,10 +1,10 @@
 h1 {
   text-align: center;
-  color: aliceblue;
+  color: black;
 }
 
-section#home {
-  background-image: url('assets/astronomy-atmosphere-earth-220201.jpg');
+.home {
+  background-image: url(../assets/astronomy-atmosphere-earth-220201.jpg);
 
   background-position: center center;
 
@@ -15,4 +15,8 @@ section#home {
   background-size: cover;
 
   background-color: #464646;
+
+  height: 25em;
+  width: 35em;
+  border-radius: 25%;
 }
