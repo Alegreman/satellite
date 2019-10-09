@@ -12,6 +12,7 @@ export interface SatDataItem {
   satlat: number;
   satlng: number;
   satalt: number;
+  above: any;
 }
 
 // TODO: replace this with real data from your application
@@ -25,7 +26,6 @@ const EXAMPLE_DATA: SatDataItem[] = [];
 
 export class SatDataDataSource extends DataSource<SatDataItem> {
   data: SatDataItem[] = EXAMPLE_DATA;
-  above: SatDataItem[] = [];
   constructor(
     private paginator: MatPaginator,
     private sort: MatSort,
@@ -33,8 +33,7 @@ export class SatDataDataSource extends DataSource<SatDataItem> {
   ) {
     super();
     this.dataService.getPosition().subscribe(res => {
-      this.data = res;
-      this.data = res.above;
+      this.data = res['above'];
       // console.log(res.above);
     });
   }
