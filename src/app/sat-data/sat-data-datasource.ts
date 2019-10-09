@@ -5,7 +5,7 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 import { DataService } from '../data.service';
 
 // TODO: Replace this with your own data model type
-export interface SatDataItem {
+export interface SatDataItem extends above {
   satname: string;
   satid: number;
   launchDate: string;
