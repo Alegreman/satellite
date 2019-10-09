@@ -25,6 +25,7 @@ const EXAMPLE_DATA: SatDataItem[] = [];
 
 export class SatDataDataSource extends DataSource<SatDataItem> {
   data: SatDataItem[] = EXAMPLE_DATA;
+  above: SatDataItem[] = [];
   constructor(
     private paginator: MatPaginator,
     private sort: MatSort,
@@ -32,6 +33,7 @@ export class SatDataDataSource extends DataSource<SatDataItem> {
   ) {
     super();
     this.dataService.getPosition().subscribe(res => {
+      this.data = res;
       this.data = res.above;
       // console.log(res.above);
     });
