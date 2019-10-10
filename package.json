@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "heroku-postbuild": "ng build --prod && npm run build",
+  "heroku-postbuild": "cd dist npm install && ng build --prod && npm run build",
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
